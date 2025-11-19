@@ -1,20 +1,16 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import AppContext from "../context/app-context";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
+import { Tajawal } from "next/font/google";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const tajawal = Tajawal({
+  // variable: tajawal,
+  weight: ["200", "300", "400", "500", "700", "800", "900"],
+  subsets: ["arabic"],
 });
 
 export const metadata: Metadata = {
@@ -70,9 +66,7 @@ export default async function RootLayout({ children, params }: Props) {
 
   return (
     <html lang={locale} dir={direction}>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${tajawal.className} antialiased`}>
         <NextIntlClientProvider messages={messages}>
           <AppContext>{children}</AppContext>
         </NextIntlClientProvider>
