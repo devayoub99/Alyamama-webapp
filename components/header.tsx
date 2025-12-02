@@ -22,21 +22,22 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
 
-  const handleCloseMobileMenu = () => setMobileMenuOpen(false)
+  const handleCloseMobileMenu = () => setMobileMenuOpen(false);
 
   return (
     <section>
       <Container className="flex px-4 py-8 sm:px-6 lg:px-8" noPadding>
         {/* Logo */}
-        <div className="flex-1">
+        <Link href="/" className="flex-1">
           <Image
             src={LogoWithText}
             alt="Alyamama Insurance"
             width={270}
             height={67}
             priority
+            className="w-48 h-12"
           />
-        </div>
+        </Link>
 
         {/* Desktop Navigation */}
         <NavigationMenu className="hidden lg:flex">
