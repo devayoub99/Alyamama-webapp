@@ -3,6 +3,7 @@ import { useTranslations } from "next-intl";
 
 import Container from "./container";
 import GetStatredCard from "./get-started-step";
+import GradientText from "./gradient-text";
 
 import InitialMeetingImage from "@/public/get-started-with-us/Initial-meeting.jpeg";
 import BusinessPlanningImage from "@/public/get-started-with-us/Business-planning.jpeg";
@@ -16,12 +17,15 @@ const GetStarted = () => {
     <section id="get-started">
       <Container className="flex flex-col" id="why-choose-us">
         <div className="gap-4 flex-2">
-          <span className="flex justify-center">
+          {/* <span className="flex justify-center">
             {t("how_to_start_with_us")}
-          </span>
-          <h2 className="mt-2 text-3xl font-bold md:text-[40px] text-center">
-            {t("how_to_get_insured")}
-          </h2>
+          </span> */}
+
+          <GradientText
+            Element="h2"
+            text={t("how_to_get_insured")}
+            classNames="mt-2 text-3xl font-bold md:text-[40px] text-center"
+          />
         </div>
         <VideoLogo />
         <div className="flex flex-col gap-14 md:gap-18">
@@ -97,9 +101,15 @@ const GetStarted = () => {
             ]}
           />
 
-          <p className="text-2xl font-bold text-center md:text-4xl text-color1">
+          {/* <p className=" text-color1">
             {t("tagline_everything_secured")}
-          </p>
+          </p> */}
+
+          <GradientText
+            Element="h2"
+            text={t("tagline_everything_secured")}
+            classNames="text-2xl font-bold text-center md:text-4xl"
+          />
         </div>
       </Container>
     </section>

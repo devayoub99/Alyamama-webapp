@@ -12,6 +12,7 @@ import NGI from "@/public/certificates/NGI.png";
 import Prevensure from "@/public/certificates/Prevensure.png";
 import IraqiReinsurance from "@/public/certificates/Iraqi-reinsurance.png";
 import InannaInsurance from "@/public/certificates/Inanna-insurance.png";
+import GradientText from "./gradient-text";
 
 const AboutUs = () => {
   const t = useTranslations("home");
@@ -19,17 +20,21 @@ const AboutUs = () => {
   return (
     <section>
       <Container className="flex flex-col" id="about-us">
-        <section className="flex flex-col md:flex-row gap-12">
+        <section className="flex flex-col gap-y-4 gap-x-12 md:flex-row">
           <div className="flex-1">
             <span>{t("whoWeAre")}</span>
-            <h2 className="mb-12 text-3xl font-bold md:text-[40px]">
-              {t("innovative_insurance_solutions")}
-            </h2>
+            <GradientText
+              Element="h2"
+              text={t("innovative_insurance_solutions")}
+              classNames="mb-12 text-3xl font-bold md:text-[40px]"
+            />
 
             <div>
-              <h3 className="mb-8 text-2xl font-bold text-color1">
-                {t("our_vision")}
-              </h3>
+              <GradientText
+                Element="h3"
+                text={t("our_vision")}
+                classNames="mb-4 text-2xl font-bold md:mb-8 text-color1"
+              />
               <p className="leading-6 text-justify">
                 {t("mission_statement_intro")}
               </p>
@@ -46,7 +51,7 @@ const AboutUs = () => {
               </p>
             </div>
           </div>
-          <div className="grid gap-8 flex-1 grid-cols-1 sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-12">
+          <div className="grid flex-1 grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-12">
             <div className="flex justify-center col-span-5">
               <Image
                 src={AboutUs2}
@@ -63,7 +68,7 @@ const AboutUs = () => {
             </div>
           </div>
         </section>
-        <div className="mt-16 mx-auto grid grid-cols-4 gap-8 sm:grid-cols-5 md:grid-cols-6 place-items-center">
+        <div className="grid grid-cols-4 gap-8 mx-auto mt-16 sm:grid-cols-5 md:grid-cols-6 place-items-center">
           <Image
             src={InannaInsurance}
             alt="InannaInsurance"

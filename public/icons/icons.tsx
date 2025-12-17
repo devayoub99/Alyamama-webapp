@@ -50,7 +50,6 @@ const RightQuoteIcon = ({ fill, className }: IconProps) => {
 };
 
 const LeftQuoteIcon = ({ fill, className }: IconProps) => {
-  console.log("className", className);
   return (
     <svg
       width="60"

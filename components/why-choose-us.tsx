@@ -6,9 +6,10 @@ import Image from "next/image";
 
 import WhyChooseUsImage from "@/public/why-alyamama/different-types-of-insurance.png";
 
-import StarIcon from "@/public/icons/star.png";
+import StarIcon from "@/public/icons/star_2.png";
 import ShieldIcon from "@/public/icons/shield.png";
 import HandshakeIcon from "@/public/icons/handshake.png";
+import GradientText from "./gradient-text";
 
 const WhyChooseUs = () => {
   const t = useTranslations("home");
@@ -23,22 +24,26 @@ const WhyChooseUs = () => {
           <span className="flex justify-center">
             {t("why_choose_al_yamama")}
           </span>
-          <h2 className="mb-12 text-3xl font-bold md:text-[40px] text-center">
-            {t("what_distinguishes_al_yamama")}
-          </h2>
+
+          <GradientText
+            Element="h2"
+            text={t("what_distinguishes_al_yamama")}
+            classNames="mb-12 text-3xl font-bold md:text-[40px] text-center"
+            theme="Secondary"
+          />
 
           <div className="flex flex-col gap-8">
             <ExpertiseCard
               title={t("advantage_expertise_title")}
               text={t("advantage_expertise_desc")}
               Image={
-                // <div className="px-1 py-2 bg-white rounded-sm">
-                <Image
-                  src={StarIcon}
-                  alt={t("advantage_expertise_title")}
-                  className="rounded-sm w-14"
-                />
-                // </div>
+                <div className="px-1 py-2 bg-white rounded-sm">
+                  <Image
+                    src={StarIcon}
+                    alt={t("advantage_expertise_title")}
+                    className="rounded-sm w-14"
+                  />
+                </div>
               }
             />
 

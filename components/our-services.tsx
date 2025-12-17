@@ -3,13 +3,10 @@ import Container from "./container";
 import Link from "next/link";
 import { ArrowBigLeftDash } from "lucide-react";
 import ServiceCard from "./service-card";
+import GradientText from "./gradient-text";
 import Image from "next/image";
 
-import service1 from "@/public/our-services/health-insurance.png";
-import service2 from "@/public/our-services/life-insurance.png";
-import service3 from "@/public/our-services/cars-insurance.png";
-import service4 from "@/public/our-services/engineering-insurance.png";
-import VideoLogo from "./VideoLogo";
+import { insuranceTypesList } from "@/lib";
 
 const OurServices = () => {
   const t = useTranslations("home");
@@ -23,64 +20,38 @@ const OurServices = () => {
       >
         <section className="flex flex-col gap-12 md:flex-row">
           <div className="flex-1">
-            <span>{t("ourServices")}</span>
-            <h2 className="mb-4 text-3xl font-bold md:text-[40px]">
-              {t("our_service_package")}
-            </h2>
+            <span>{t("our_services")}</span>
+
+            <GradientText
+              Element="h2"
+              text={t("our_service_package")}
+              classNames="mb-4 text-3xl font-bold md:text-[40px]"
+            />
           </div>
         </section>
 
-        <Link href="/services" className="flex items-center justify-end gap-3 ">
-          <span className="">{t("browse_all_services")}</span>
-          <ArrowBigLeftDash className="animate-bounce-left" />
+        <Link href="/services" className="flex items-center justify-end gap-4">
+          <span className="text-sm">{t("browse_all_services")}</span>
+          <ArrowBigLeftDash className="w-6 h-8 animate-bounce-left" />
         </Link>
 
-        {/* <section className="flex flex-col gap-12 my-8 md:flex-row"> */}
         <section className="grid grid-cols-1 gap-12 my-8 md:grid-cols-2">
-          <ServiceCard
-            title={t("health_insurance")}
-            text={t("health_insurance_desc")}
-            Image={
-              <Image
-                src={service1}
-                alt={t("health_insurance")}
-                className="flex-1 w-full rounded-2xl"
-              />
-            }
-          />
-          <ServiceCard
-            title={t("life_insurance")}
-            text={t("life_insurance_desc")}
-            Image={
-              <Image
-                src={service2}
-                alt={t("life_insurance")}
-                className="flex-1 w-full rounded-2xl"
-              />
-            }
-          />
-          <ServiceCard
-            title={t("car_insurance")}
-            text={t("car_insurance_desc")}
-            Image={
-              <Image
-                src={service3}
-                alt="Service 1"
-                className="flex-1 w-full rounded-2xl"
-              />
-            }
-          />
-          <ServiceCard
-            title={t("engineering_insurance")}
-            text={t("engineering_insurance_desc")}
-            Image={
-              <Image
-                src={service4}
-                alt="Service 1"
-                className="flex-1 w-full rounded-2xl"
-              />
-            }
-          />
+          {insuranceTypesList.map((insurance) => (
+            <ServiceCard
+              key={insurance.id}
+              title={insurance.name}
+              text={insurance.description}
+              Image={
+                <Image
+                  src={`/our-services/${insurance.imageSrc}`}
+                  alt={insurance.name}
+                  width={100}
+                  height={100}
+                  className="flex-1 w-full rounded-2xl"
+                />
+              }
+            />
+          ))}
         </section>
       </Container>
     </section>

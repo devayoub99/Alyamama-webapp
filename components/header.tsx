@@ -35,32 +35,37 @@ const Header = () => {
             width={270}
             height={67}
             priority
-            className="w-48 h-12"
+            className="w-48 h-12 md:w-60 md:h-15"
           />
         </Link>
 
         {/* Desktop Navigation */}
         <NavigationMenu className="hidden lg:flex">
-          <NavigationMenuIndicator>asdfas</NavigationMenuIndicator>
           <NavigationMenuList dir="rtl" className="flex flex-row">
             <NavigationMenuItem>
-              <NavigationMenuLink href="/">{t("homePage")}</NavigationMenuLink>
+              <NavigationMenuLink href="/">{t("home_page")}</NavigationMenuLink>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <NavigationMenuLink href="/about">
-                {t("aboutUs")}
+              <NavigationMenuLink href="/#about-us">
+                {t("about_us")}
               </NavigationMenuLink>
             </NavigationMenuItem>
 
-            <NavigationMenuItem>
+            {/* <NavigationMenuItem>
               <NavigationMenuLink href="/news">
                 {t("latestNews")}
               </NavigationMenuLink>
+            </NavigationMenuItem> */}
+
+            <NavigationMenuItem>
+              <NavigationMenuLink href="/#featured-clients">
+                {t("featured_clients")}
+              </NavigationMenuLink>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <NavigationMenuTrigger>{t("ourServices")}</NavigationMenuTrigger>
+              <NavigationMenuTrigger>{t("our_services")}</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="p-4 w-[200px]">
                   <li>
@@ -85,7 +90,7 @@ const Header = () => {
 
             <NavigationMenuItem>
               <NavigationMenuLink href="/#contact-us">
-                {t("contactUs")}
+                {t("contact_us")}
               </NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
@@ -116,15 +121,15 @@ const Header = () => {
                 onClick={handleCloseMobileMenu}
                 className="px-3 py-2 text-lg transition-colors rounded-md hover:bg-accent"
               >
-                {t("homePage")}
+                {t("home_page")}
               </a>
 
               <Link
-                href="/about"
+                href="/about-us"
                 onClick={handleCloseMobileMenu}
                 className="px-3 py-2 text-lg transition-colors rounded-md hover:bg-accent"
               >
-                {t("aboutUs")}
+                {t("about_us")}
               </Link>
 
               <Link
@@ -141,7 +146,7 @@ const Header = () => {
                   onClick={() => setServicesOpen(!servicesOpen)}
                   className="flex items-center justify-between w-full px-3 py-2 text-lg transition-colors rounded-md hover:bg-accent"
                 >
-                  <span>{t("ourServices")}</span>
+                  <span>{t("our_services")}</span>
                   <ChevronDown
                     className={`h-4 w-4 transition-transform ${
                       servicesOpen ? "rotate-180" : ""
@@ -169,11 +174,11 @@ const Header = () => {
               </div>
 
               <Link
-                href="/contact-us"
+                href="/#contact-us"
                 onClick={handleCloseMobileMenu}
                 className="px-3 py-2 text-lg transition-colors rounded-md hover:bg-accent"
               >
-                {t("contactUs")}
+                {t("contact_us")}
               </Link>
             </nav>
           </Container>

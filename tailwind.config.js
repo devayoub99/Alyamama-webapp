@@ -6,6 +6,12 @@ module.exports = {
       backgroundImage: {
         "deep-fade":
           "linear-gradient(-45deg, var(--color-midnight-blue-600) 0%, var(--color-dusty-grape-400) 50%, var(--color-wisteria-500) 100%)",
+
+        "text-gradient-indigo":
+          "linear-gradient(to right, #6366f1, #4f46e5, #3730a3)",
+
+        "text-gradient-yellow":
+          "linear-gradient(to right, #fceb9c, #f4e84a, #d4a919)",
       },
     },
   },

@@ -13,33 +13,72 @@ import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
+import GradientText from "./gradient-text";
+import Link from "next/link";
 
 const ContactUs = () => {
   const t = useTranslations("home");
 
   return (
     <section>
-      <Container className="flex flex-col" id="get-started">
+      <Container className="flex flex-col -scroll-m-20" id="contact-us">
         <div className="gap-4 flex-2 md:mb-14">
           <span className="flex justify-center">{t("start_with_us_cta")}</span>
-          <h2 className="mt-2 text-2xl font-bold md:text-[40px] text-center">
-            {t("get_comprehensive_coverage")}
-          </h2>
+
+          <GradientText
+            Element="h2"
+            text={t("get_comprehensive_coverage")}
+            classNames="mt-2 text-2xl font-bold md:text-[40px] text-center"
+          />
         </div>
         <div className="flex flex-col md:flex-row">
           <section className="flex-1 py-8 md:py-10">
-            <h3 className="text-xl font-medium text-center">
-              {t("stay_in_touch")}
-            </h3>
+            <GradientText
+              Element="h3"
+              text={t("stay_in_touch")}
+              classNames="text-2xl font-medium text-center"
+            />
             <div className="flex flex-col gap-6 pt-8 pb-8 md:pt-20">
               <ContactUsCard
                 title={t("label_phone_number")}
-                text="+964 783 485 5602"
+                Link={
+                  <a
+                    href="tel: +964 783 4855 602"
+                    className="underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    +964 783 4855 602
+                  </a>
+                }
                 Image={<Image src={PhoneIcon} alt="New" className="w-6" />}
               />
               <ContactUsCard
+                title={t("label_email")}
+                Link={
+                  <a
+                    href="mailto:info@alyamama-iq.com"
+                    className="underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    info@alyamama-iq.com
+                  </a>
+                }
+                Image={<Image src={EmailIcon} alt="New" className="w-6" />}
+              />
+              <ContactUsCard
                 title={t("label_address")}
-                text={t("address_detail")}
+                Link={
+                  <a
+                    href="https://maps.app.goo.gl/97pScemvSx8kVkCb7"
+                    className="underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {t("address_detail")}
+                  </a>
+                }
                 Image={<Image src={MapIcon} alt="New" className="w-6" />}
               />
               <ContactUsCard
@@ -49,17 +88,14 @@ const ContactUs = () => {
                   <Image src={WorkingHoursIcon} alt="New" className="w-6" />
                 }
               />
-              <ContactUsCard
-                title={t("label_email")}
-                text="info@alyamama-iq.com"
-                Image={<Image src={EmailIcon} alt="New" className="w-6" />}
-              />
             </div>
           </section>
           <section className="flex-1 py-10 px-10 bg-[#F3F5FC] rounded-xl">
-            <h3 className="text-xl font-medium text-center">
-              {t("contact_message")}
-            </h3>
+            <GradientText
+              Element="h3"
+              text={t("contact_message")}
+              classNames="text-2xl font-medium text-center"
+            />
 
             <form className="flex flex-col gap-6 pt-20 pb-8">
               <div>

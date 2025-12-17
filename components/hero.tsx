@@ -5,6 +5,7 @@ import Container from "./container";
 import { useTranslations } from "next-intl";
 import { LeftQuoteIcon, LockIcon, RightQuoteIcon } from "@/public/icons/icons";
 import AnimatedCurlyArrow from "./animated-curly-arrow";
+import GradientText from "./gradient-text";
 
 const Hero = () => {
   const t = useTranslations("home");
@@ -28,16 +29,24 @@ const Hero = () => {
             <LockIcon />
             {t("slogan")}
           </p>
-          <h2 className="my-8 text-3xl font-bold md:text-5xl">
+          {/* <h2 className="my-8 text-3xl font-bold md:text-5xl">
             {t("landingHeading")}
-          </h2>
+          </h2> */}
+
+          <GradientText
+            Element="h2"
+            text={t("landing_heading")}
+            classNames="my-8 text-3xl font-bold md:text-5xl"
+            theme="Secondary"
+          />
+
           <p className="relative">
             <RightQuoteIcon
               fill="#f4e84a"
               className="opacity-0 animate-scale-up"
             />
             <span className="opacity-0 italic font-medium block text-center text-md md:text-[20px] animate-scale-up delay-1000">
-              {t("landingQuote")}
+              {t("landing_quote")}
             </span>
             <LeftQuoteIcon
               fill="#f4e84a"
@@ -45,7 +54,7 @@ const Hero = () => {
             />
           </p>
           <p className="self-end my-10 text-sm italic font-light opacity-0 animate-scale-up delay-2500 ">
-            {t("visionBrief")}
+            {t("vision_brief")}
           </p>
         </div>
       </Container>
