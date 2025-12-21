@@ -16,6 +16,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Container from "./container";
 import Link from "next/link";
+import { navigationLinks } from "@/lib";
 
 const Header = () => {
   const t = useTranslations("home");
@@ -42,57 +43,30 @@ const Header = () => {
         {/* Desktop Navigation */}
         <NavigationMenu className="hidden lg:flex">
           <NavigationMenuList dir="rtl" className="flex flex-row">
-            <NavigationMenuItem>
-              <NavigationMenuLink href="/">{t("home_page")}</NavigationMenuLink>
-            </NavigationMenuItem>
-
-            <NavigationMenuItem>
-              <NavigationMenuLink href="/#about-us">
-                {t("about_us")}
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-
-            {/* <NavigationMenuItem>
-              <NavigationMenuLink href="/news">
-                {t("latestNews")}
-              </NavigationMenuLink>
-            </NavigationMenuItem> */}
-
-            <NavigationMenuItem>
-              <NavigationMenuLink href="/#featured-clients">
-                {t("featured_clients")}
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>{t("our_services")}</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="p-4 w-[200px]">
-                  <li>
-                    <NavigationMenuLink
-                      href="/services/service-1"
-                      className="block p-2 hover:bg-slate-100"
-                    >
-                      Service 1
-                    </NavigationMenuLink>
-                  </li>
-                  <li>
-                    <NavigationMenuLink
-                      href="/services/service-2"
-                      className="block p-2 hover:bg-slate-100"
-                    >
-                      Service 2
-                    </NavigationMenuLink>
-                  </li>
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-
-            <NavigationMenuItem>
-              <NavigationMenuLink href="/#contact-us">
-                {t("contact_us")}
-              </NavigationMenuLink>
-            </NavigationMenuItem>
+            {navigationLinks?.map((item) =>
+              item?.type === "simple" ? (
+                <NavigationMenuLink key={item.id} href={item.link}>
+                  {t(item.title)}
+                </NavigationMenuLink>
+              ) : (
+                <NavigationMenuItem key={item.id}>
+                  <NavigationMenuTrigger>{t(item.title)}</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="p-4 w-[200px]">
+                      {item?.subItems?.map((subItem) => (
+                        <NavigationMenuLink
+                          key={subItem.id}
+                          href={subItem.link}
+                          className="text-right"
+                        >
+                          {t(subItem.title)}
+                        </NavigationMenuLink>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              )
+            )}
           </NavigationMenuList>
         </NavigationMenu>
 
@@ -116,70 +90,34 @@ const Header = () => {
         <div className="border-t lg:hidden bg-background">
           <Container className="px-4 py-4 sm:px-6" noPadding>
             <nav className="flex flex-col space-y-1" dir="rtl">
-              <a
-                href="#"
-                onClick={handleCloseMobileMenu}
-                className="px-3 py-2 text-lg transition-colors rounded-md hover:bg-accent"
-              >
-                {t("home_page")}
-              </a>
-
-              <Link
-                href="/about-us"
-                onClick={handleCloseMobileMenu}
-                className="px-3 py-2 text-lg transition-colors rounded-md hover:bg-accent"
-              >
-                {t("about_us")}
-              </Link>
-
-              <Link
-                href="/news"
-                onClick={handleCloseMobileMenu}
-                className="px-3 py-2 text-lg transition-colors rounded-md hover:bg-accent"
-              >
-                {t("latestNews")}
-              </Link>
-
-              {/* Mobile Services Dropdown */}
-              <div>
-                <button
-                  onClick={() => setServicesOpen(!servicesOpen)}
-                  className="flex items-center justify-between w-full px-3 py-2 text-lg transition-colors rounded-md hover:bg-accent"
-                >
-                  <span>{t("our_services")}</span>
-                  <ChevronDown
-                    className={`h-4 w-4 transition-transform ${
-                      servicesOpen ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-                {servicesOpen && (
-                  <div className="mt-1 mr-4 space-y-1">
-                    <Link
-                      href="/services/service-1"
-                      onClick={handleCloseMobileMenu}
-                      className="block px-3 py-2 text-base transition-colors rounded-md hover:bg-accent/50"
-                    >
-                      Service 1
-                    </Link>
-                    <Link
-                      href="/services/service-2"
-                      onClick={handleCloseMobileMenu}
-                      className="block px-3 py-2 text-base transition-colors rounded-md hover:bg-accent/50"
-                    >
-                      Service 2
-                    </Link>
-                  </div>
-                )}
-              </div>
-
-              <Link
-                href="/#contact-us"
-                onClick={handleCloseMobileMenu}
-                className="px-3 py-2 text-lg transition-colors rounded-md hover:bg-accent"
-              >
-                {t("contact_us")}
-              </Link>
+              <NavigationMenu className="flex">
+                <NavigationMenuList className="flex flex-col">
+                  {navigationLinks?.map((item) =>
+                    item?.type === "simple" ? (
+                      <NavigationMenuLink key={item.id} href={item.link}>
+                        {t(item.title)}
+                      </NavigationMenuLink>
+                    ) : (
+                      <NavigationMenuItem key={item.id}>
+                        <NavigationMenuTrigger>
+                          {t(item.title)}
+                        </NavigationMenuTrigger>
+                        <NavigationMenuContent className="px-4">
+                          {item?.subItems?.map((subItem) => (
+                            <NavigationMenuLink
+                              key={subItem.id}
+                              href={subItem.link}
+                              className="text-sm text-right"
+                            >
+                              {t(subItem.title)}
+                            </NavigationMenuLink>
+                          ))}
+                        </NavigationMenuContent>
+                      </NavigationMenuItem>
+                    )
+                  )}
+                </NavigationMenuList>
+              </NavigationMenu>
             </nav>
           </Container>
         </div>

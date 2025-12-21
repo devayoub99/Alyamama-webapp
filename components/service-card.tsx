@@ -25,7 +25,7 @@ const ServiceCard = ({ title, text, Image }: ServiceCardProps) => {
             classNames="py-2 text-2xl font-bold"
           />
 
-          <p className="leading-7 text-justify">{t(text)}</p>
+          <p className="leading-7 text-right md:text-justify">{t(text)}</p>
         </div>
         {Image}
       </CardContent>

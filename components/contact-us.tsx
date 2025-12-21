@@ -1,5 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { useActionState } from "react";
+import { useEffect, useRef } from "react";
 
 import Container from "./container";
 
@@ -14,14 +18,28 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
 import GradientText from "./gradient-text";
-import Link from "next/link";
+import { submitContactForm } from "@/app/actions/contact";
 
 const ContactUs = () => {
   const t = useTranslations("home");
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const [state, formAction] = useActionState(submitContactForm, {
+    success: false,
+    message: "",
+    fullName: "",
+  });
+
+  useEffect(() => {
+    if (state.success) {
+      formRef.current?.reset();
+      // Optional: Scroll to top of form or show a toast notification
+    }
+  }, [state.success]);
 
   return (
     <section>
-      <Container className="flex flex-col -scroll-m-20" id="contact-us">
+      <Container className="flex flex-col scroll-m-2" id="contact-us">
         <div className="gap-4 flex-2 md:mb-14">
           <span className="flex justify-center">{t("start_with_us_cta")}</span>
 
@@ -97,7 +115,11 @@ const ContactUs = () => {
               classNames="text-2xl font-medium text-center"
             />
 
-            <form className="flex flex-col gap-6 pt-20 pb-8">
+            <form
+              ref={formRef}
+              action={formAction}
+              className="flex flex-col gap-6 pt-20 pb-8"
+            >
               <div>
                 <Label className="mb-3 text-xl" htmlFor="fullName">
                   {t("label_full_name")}
@@ -107,6 +129,7 @@ const ContactUs = () => {
                   id="fullName"
                   name="fullName"
                   placeholder={t("label_full_name")}
+                  required
                 />
               </div>
               <div>
@@ -117,7 +140,10 @@ const ContactUs = () => {
                   className="h-12 bg-white"
                   id="email"
                   name="email"
+                  type="email"
                   placeholder={t("label_email")}
+                  required
+                  defaultValue="admin@devayb.com"
                 />
               </div>
               <div>
@@ -129,9 +155,24 @@ const ContactUs = () => {
                   id="message"
                   name="message"
                   placeholder={t("label_message")}
+                  required
+                  defaultValue="Hello world"
                 />
               </div>
-              <Button className="p-6 mr-auto text-lg w-fit">
+
+              {state.message && (
+                <div
+                  className={`p-4 rounded-lg ${
+                    state.success
+                      ? "bg-green-50 text-green-800 border border-green-200"
+                      : "bg-red-50 text-red-800 border border-red-200"
+                  }`}
+                >
+                  {state.message}
+                </div>
+              )}
+
+              <Button type="submit" className="p-6 mr-auto text-lg w-fit">
                 {t("button_send")}
               </Button>
             </form>

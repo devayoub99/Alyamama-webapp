@@ -6,16 +6,16 @@ const ourServices = {
       "health_insurance_paragraph2",
       "health_insurance_paragraph3",
     ],
-    imageSrc: "health-insurance.png",
+    imageSrc: "health-insurance.jpg",
   },
-  life_insurance: {
-    title: "life_insurance_title",
+  fire_insurance: {
+    title: "fire_insurance_title",
     paragraphs: [
-      "life_insurance_paragraph1",
-      "life_insurance_paragraph2",
-      "life_insurance_paragraph3",
+      "fire_insurance_paragraph1",
+      "fire_insurance_paragraph2",
+      "fire_insurance_paragraph3",
     ],
-    imageSrc: "life-insurance.png",
+    imageSrc: "fire-insurance.jpg",
   },
   car_insurance: {
     title: "car_insurance_title",
@@ -24,7 +24,7 @@ const ourServices = {
       "car_insurance_paragraph2",
       "car_insurance_paragraph3",
     ],
-    imageSrc: "cars-insurance.png",
+    imageSrc: "cars-insurance.jpg",
   },
   engineering_insurance: {
     title: "engineering_insurance_title",
@@ -33,7 +33,7 @@ const ourServices = {
       "engineering_insurance_paragraph2",
       "engineering_insurance_paragraph3",
     ],
-    imageSrc: "engineering-insurance.png",
+    imageSrc: "engineering-insurance.jpg",
   },
 };
 

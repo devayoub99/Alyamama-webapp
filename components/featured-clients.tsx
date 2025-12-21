@@ -19,7 +19,10 @@ const OurParnters = () => {
 
   return (
     <section>
-      <Container className="flex flex-col items-center" id="featured-clients">
+      <Container
+        className="relative flex flex-col items-center"
+        id="featured-clients"
+      >
         <GradientText
           Element="h2"
           text={t("featured_clients")}
@@ -27,7 +30,7 @@ const OurParnters = () => {
         />
         {/* <button className="p-4 border cursor-pointer">CLick here</button> */}
 
-        <Link href="/client">asd</Link>
+        <Link href="/client/1">asd</Link>
         <div className="grid grid-cols-4 gap-8 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 place-items-center">
           <LogoImage src={Almaham} alt="Almaham Company" />
 

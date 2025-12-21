@@ -34,7 +34,7 @@ const Footer = () => {
           </p>
           <div className="flex justify-end gap-2 py-4">
             <a
-              href="https://www.tiktok.com/alyamama_insurance"
+              href="https://www.tiktok.com/@alyamama_insurance"
               target="_blank"
               rel="noopener noreferrer"
             >

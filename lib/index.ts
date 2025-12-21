@@ -1,24 +1,61 @@
 const navigationLinks = [
   {
+    id: 1,
     type: "simple",
     title: "home_page",
-    link: "/",
+    link: "/#",
   },
   {
+    id: 2,
     type: "simple",
     title: "about_us",
     link: "/#about-us",
   },
 
   {
+    id: 3,
     type: "simple",
     title: "featured_clients",
-    link: "/#featured_clients",
+    link: "/#featured-clients",
   },
   {
+    id: 4,
     type: "complex",
     title: "our_services",
+    link: undefined,
+    subItems: [
+      {
+        id: 5,
+        type: "simple",
+        title: "fire_insurance",
+        link: "/services/fire_insurance",
+      },
+      {
+        id: 6,
+        type: "simple",
+        title: "health_insurance",
+        link: "/services/health_insurance",
+      },
+      {
+        id: 7,
+        type: "simple",
+        title: "engineering_insurance",
+        link: "/services/engineering_insurance",
+      },
+      {
+        id: 8,
+        type: "simple",
+        title: "car_insurance",
+        link: "/services/car_insurance",
+      },
+    ],
   },
+  // {
+  //   id: 9,
+  //   type: "simple",
+  //   title: "contact_us",
+  //   link: "/#contact-us",
+  // },
 ];
 
 const insuranceTypesList = [
@@ -26,27 +63,27 @@ const insuranceTypesList = [
     id: 1,
     name: "health_insurance",
     description: "health_insurance_desc",
-    imageSrc: "health-insurance.png",
+    imageSrc: "health-insurance.jpg",
   },
   {
     id: 2,
-    name: "life_insurance",
-    description: "life_insurance_desc",
-    imageSrc: "life-insurance.png",
+    name: "fire_insurance",
+    description: "fire_insurance_desc",
+    imageSrc: "fire-insurance.jpg",
   },
 
   {
     id: 3,
     name: "car_insurance",
     description: "car_insurance_desc",
-    imageSrc: "cars-insurance.png",
+    imageSrc: "cars-insurance.jpg",
   },
   {
     id: 4,
     name: "engineering_insurance",
     description: "engineering_insurance_desc",
-    imageSrc: "engineering-insurance.png",
+    imageSrc: "engineering-insurance.jpg",
   },
 ];
 
-export { insuranceTypesList };
+export { insuranceTypesList, navigationLinks };

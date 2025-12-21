@@ -6,9 +6,12 @@ import Image from "next/image";
 
 import WhyChooseUsImage from "@/public/why-alyamama/different-types-of-insurance.png";
 
-import StarIcon from "@/public/icons/star_2.png";
-import ShieldIcon from "@/public/icons/shield.png";
-import HandshakeIcon from "@/public/icons/handshake.png";
+// import StarIcon from "@/public/icons/star_2.png";
+import StarIcon from "@/public/icons/star.jpeg";
+// import ShieldIcon from "@/public/icons/shield.png";
+import ShieldIcon from "@/public/icons/shield.jpeg";
+// import HandshakeIcon from "@/public/icons/handshake.png";
+import HandshakeIcon from "@/public/icons/handshake.jpeg";
 import GradientText from "./gradient-text";
 
 const WhyChooseUs = () => {
@@ -37,13 +40,11 @@ const WhyChooseUs = () => {
               title={t("advantage_expertise_title")}
               text={t("advantage_expertise_desc")}
               Image={
-                <div className="px-1 py-2 bg-white rounded-sm">
-                  <Image
-                    src={StarIcon}
-                    alt={t("advantage_expertise_title")}
-                    className="rounded-sm w-14"
-                  />
-                </div>
+                <Image
+                  src={StarIcon}
+                  alt={t("advantage_expertise_title")}
+                  className="rounded-sm w-14"
+                />
               }
             />
 
@@ -51,13 +52,11 @@ const WhyChooseUs = () => {
               title={t("advantage_coverage_title")}
               text={t("advantage_coverage_desc")}
               Image={
-                <div className="px-1 py-2 bg-white rounded-sm">
-                  <Image
-                    src={ShieldIcon}
-                    alt={t("advantage_coverage_title")}
-                    className="w-14"
-                  />
-                </div>
+                <Image
+                  src={ShieldIcon}
+                  alt={t("advantage_coverage_title")}
+                  className="rounded-sm w-14"
+                />
               }
             />
 
@@ -65,13 +64,11 @@ const WhyChooseUs = () => {
               title={t("advantage_customer_focus_title")}
               text={t("advantage_customer_focus_desc")}
               Image={
-                <div className="px-1 py-2 bg-white rounded-sm">
-                  <Image
-                    src={HandshakeIcon}
-                    alt={t("advantage_customer_focus_title")}
-                    className="w-14"
-                  />
-                </div>
+                <Image
+                  src={HandshakeIcon}
+                  alt={t("advantage_customer_focus_title")}
+                  className="rounded-sm w-14"
+                />
               }
             />
           </div>

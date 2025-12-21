@@ -1,11 +1,14 @@
 import Header from "@/components/header";
 import Hero from "@/components/hero";
 import React from "react";
+import ClientModal from "./@modal/(.)client/[id]/page";
 
 export default async function HomeLayout({
   children,
+  modal,
 }: {
   children: React.ReactNode;
+  modal: React.ReactNode;
 }) {
   return (
     <>
@@ -13,7 +16,8 @@ export default async function HomeLayout({
         <Header />
         <Hero />
       </section>
-      {children}
+      {modal}
+      <main>{children}</main>
     </>
   );
 }
