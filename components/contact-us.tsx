@@ -27,7 +27,6 @@ const ContactUs = () => {
   const [state, formAction] = useActionState(submitContactForm, {
     success: false,
     message: "",
-    fullName: "",
   });
 
   useEffect(() => {
@@ -143,7 +142,6 @@ const ContactUs = () => {
                   type="email"
                   placeholder={t("label_email")}
                   required
-                  defaultValue="admin@devayb.com"
                 />
               </div>
               <div>
@@ -156,7 +154,6 @@ const ContactUs = () => {
                   name="message"
                   placeholder={t("label_message")}
                   required
-                  defaultValue="Hello world"
                 />
               </div>
 

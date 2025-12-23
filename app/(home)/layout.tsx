@@ -1,7 +1,7 @@
 import Header from "@/components/header";
 import Hero from "@/components/hero";
 import React from "react";
-import ClientModal from "./@modal/(.)client/[id]/page";
+import ClientModal from "./@modal/page";
 
 export default async function HomeLayout({
   children,

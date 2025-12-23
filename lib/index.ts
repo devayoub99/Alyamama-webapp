@@ -86,4 +86,55 @@ const insuranceTypesList = [
   },
 ];
 
-export { insuranceTypesList, navigationLinks };
+const featuredClients = [
+  {
+    id: 1,
+    name: "tbi",
+    description: "tbi_desc",
+    imageSrc: "/featured-clients/TBI.jpg",
+  },
+  {
+    id: 2,
+    name: "usembassy",
+    description: "us_embassy_desc",
+    imageSrc: "/featured-clients/Us-embassy.png",
+  },
+  {
+    id: 3,
+    name: "moo",
+    description: "moo_desc",
+    imageSrc: "/featured-clients/MoO.png",
+  },
+  {
+    id: 4,
+    name: "sanaAlamar",
+    description: "sana_alamar_desc",
+    imageSrc: "/featured-clients/Sana-alamar.jpg",
+  },
+  {
+    id: 5,
+    name: "halawany",
+    description: "halawany_desc",
+    imageSrc: "/featured-clients/Halawany.jpg",
+  },
+  {
+    id: 6,
+    name: "wadi",
+    description: "wadi_desc",
+    imageSrc: "/featured-clients/Wadi.png",
+  },
+  {
+    id: 7,
+    name: "khoshnaw",
+    description: "khoshnaw_desc",
+    imageSrc: "/featured-clients/Khoshnaw.jpg",
+  },
+  {
+    id: 8,
+    name: "almaham",
+    description: "almaham_desc",
+    imageSrc: "/featured-clients/Almaham.jpg",
+  },
+];
+
+export { navigationLinks, insuranceTypesList, featuredClients };

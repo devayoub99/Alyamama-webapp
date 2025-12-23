@@ -1,44 +1,59 @@
-// app/actions/contact.ts
 "use server";
-
 import nodemailer from "nodemailer";
 
-export async function submitContactForm(formData: FormData) {
-  console.log("formData", formData);
+export async function submitContactForm(state, formData: FormData) {
   const fullName = formData.get("fullName") as string;
   const email = formData.get("email") as string;
   const message = formData.get("message") as string;
 
-  console.log("FULL NAME", fullName);
-  console.log("email", email);
-  console.log("message", message);
+  // Validate environment variables
+  if (
+    !process.env.SMTP_HOST ||
+    !process.env.SMTP_USER ||
+    !process.env.SMTP_PASS ||
+    !process.env.SMTP_RECEIVER_EMAIL
+  ) {
+    console.error("Missing SMTP configuration");
+    return { success: false, message: "Server configuration error" };
+  }
+
+  const port = parseInt(process.env.SMTP_PORT || "587");
+
+  console.log();
 
   const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST, // e.g., smtp.gmail.com
-    port: 587,
-    secure: false,
+    host: process.env.SMTP_HOST,
+    port: process.env.SMTP_PORT,
+    secure: port === 465, // true for 465, false for other ports
     auth: {
       user: process.env.SMTP_USER,
       pass: process.env.SMTP_PASS,
     },
+    // Add timeout settings
+    // connectionTimeout: 10000,
+    // greetingTimeout: 10000,
   });
 
   try {
+    // Verify connection
+    await transporter.verify();
+
     await transporter.sendMail({
       from: process.env.SMTP_USER,
-      to: "info@alyamama-iq.com",
-      subject: `New Contact Form Submission from ${fullName}`,
+      to: process.env.SMTP_RECEIVER_EMAIL,
+      subject: `طلب استشارة من موقع الشركة`,
       html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${fullName}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message}</p>
+        <div dir="rtl">
+          <p><strong>الإسم:</strong> ${fullName}</p>
+          <p><strong>البريد الإلكتروني:</strong> ${email}</p>
+          <p><strong>الرسالة:</strong></p>
+          <p>${message}</p>
+        </div>
       `,
     });
-
-    return { success: true, message: "Email sent successfully" };
+    return { success: true, message: "تم إرسال الرسالة" };
   } catch (error) {
+    console.error("ERROR", error);
     return { success: false, message: "Failed to send email" };
   }
 }

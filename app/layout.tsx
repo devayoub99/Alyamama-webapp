@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import AppContext from "../context/app-context";
 import { routing } from "@/i18n/routing";
-import { notFound } from "next/navigation";
 import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { Tajawal } from "next/font/google";
@@ -46,7 +45,7 @@ export const metadata: Metadata = {
 
 type Props = {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 };
 
 export function generateStaticParams() {

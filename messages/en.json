@@ -86,6 +86,23 @@
     "engineering_insurance_title": "Engineering Insurance",
     "engineering_insurance_paragraph1": "A specialized group of insurance policies designed to cover risks related to construction and building works, installation of machinery and equipment, and damage that may occur during operation. This type of insurance is essential for large and complex projects to protect significant investments from unforeseen losses.",
     "engineering_insurance_paragraph2": "Key coverages include: Contractors' All Risks (CAR) insurance, which covers physical damage to the project during the construction period; and Erection All Risks (EAR) insurance, which covers machinery and equipment during installation and testing.",
-    "engineering_insurance_paragraph3": "Engineering insurance policies can also cover financial losses resulting from business interruption (Delayed Start-up) after a covered accident, in addition to third-party liability coverage for physical or material damages that may occur during project execution."
+    "engineering_insurance_paragraph3": "Engineering insurance policies can also cover financial losses resulting from business interruption (Delayed Start-up) after a covered accident, in addition to third-party liability coverage for physical or material damages that may occur during project execution.",
+
+    "tbi": "TBI (Trade Bank of Iraq)",
+    "tbi_desc": "One of the leading financial institutions in Iraq.",
+    "usembassy": "US Embassy",
+    "us_embassy_desc": "Diplomatic mission providing services and cooperation.",
+    "moo": "Ministry of Oil (MoO)",
+    "moo_desc": "Government sector managing oil and gas resources.",
+    "sanaAlamar": "Sana Alamar",
+    "sana_alamar_desc": "Providing premium logistics and general services.",
+    "halawany": "Al-Halawany Sweets",
+    "halawany_desc": "Leading experts in trade and industrial investments.",
+    "wadi": "Wadi Al-Rawashed company",
+    "wadi_desc": "Specialized in construction and infrastructure development.",
+    "khoshnaw": "Khoshnaw company",
+    "khoshnaw_desc": "A diversified group focused on retail and distribution.",
+    "almaham": "Almaham company",
+    "almaham_desc": "Professional services and project management solutions."
   }
 }
