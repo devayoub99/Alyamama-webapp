@@ -19,6 +19,7 @@ const GradientText = ({
   let leadingSize = "leading-7";
 
   switch (Element) {
+    case "h1":
     case "h2":
       leadingSize = "leading-18";
       break;

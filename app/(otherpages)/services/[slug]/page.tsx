@@ -3,13 +3,22 @@ import Container from "@/components/container";
 import GradientText from "@/components/gradient-text";
 import ourServices from "@/lib/our-services";
 import Image from "next/image";
-// import { useTranslations } from "use-intl";
+// import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 interface ServicePageProps {
   params: Promise<{
     slug: string;
   }>;
 }
+
+// Helper function to get service
+
+const getService = async (slug: string) => {
+  const service = ourServices[slug as keyof typeof ourServices];
+
+  return service || null;
+};
 
 // Generate static params for all services at build time
 export async function generateStaticParams() {
@@ -21,8 +30,9 @@ export async function generateStaticParams() {
 // Generate metadata for SEO
 export async function generateMetadata({ params }: ServicePageProps) {
   const { slug } = await params;
-  // const service = ourServices[slug];
-  const service = ourServices[slug as keyof typeof ourServices];
+  const t = await getTranslations("home");
+
+  const service = await getService(slug);
 
   if (!service) {
     return {
@@ -31,18 +41,17 @@ export async function generateMetadata({ params }: ServicePageProps) {
   }
 
   return {
-    title: service.title,
-    description: service.paragraphs?.[0] || "",
+    title: t(service.title),
+    description: t(service.paragraphs?.[0]) || "",
   };
 }
 
 export default async function ServicePage({ params }: ServicePageProps) {
-  const { slug } = await params;
-  // const t = useTranslations("home");
-  // const service = ourServices[slug];
-  const service = ourServices[slug as keyof typeof ourServices];
+  const t = await getTranslations("home");
 
-  // Use Next.js notFound() for proper 404 handling
+  const { slug } = await params;
+  const service = await getService(slug);
+
   if (!service) {
     notFound();
   }
@@ -57,7 +66,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
           <div className="flex-1 lg:flex-3">
             <GradientText
               Element="h1"
-              text={title}
+              text={t(title)}
               classNames="mb-6 text-3xl font-bold md:mb-8 md:text-[40px] lg:text-5xl"
             />
             <div className="flex flex-col gap-4 md:gap-6">
@@ -66,7 +75,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                   key={index}
                   className="text-base leading-relaxed text-justify md:text-lg"
                 >
-                  {paragraph}
+                  {t(paragraph)}
                 </p>
               ))}
             </div>
@@ -77,7 +86,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
             <div className="relative w-full overflow-hidden rounded-lg shadow-lg aspect-square">
               <Image
                 src={`/our-services/${imageSrc}`}
-                alt={title}
+                alt={t(title)}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
                 className="object-cover"
