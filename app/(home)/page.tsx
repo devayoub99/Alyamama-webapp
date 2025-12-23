@@ -2,8 +2,6 @@ import AboutUs from "@/components/about-us";
 import ContactUs from "@/components/contact-us";
 import Footer from "@/components/footer";
 import GetStarted from "@/components/get-started";
-import Header from "@/components/header";
-import Hero from "@/components/hero";
 import FeaturedClients from "@/components/featured-clients";
 import OurServices from "@/components/our-services";
 import WhyChooseUs from "@/components/why-choose-us";

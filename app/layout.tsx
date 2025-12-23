@@ -45,7 +45,7 @@ export const metadata: Metadata = {
 
 type Props = {
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
+  params: Promise<{ locale?: string }>;
 };
 
 export function generateStaticParams() {
@@ -64,7 +64,7 @@ export default async function RootLayout({ children, params }: Props) {
   const direction = locale === "en" ? "ltr" : "rtl";
 
   return (
-    <html lang={locale} dir={direction}>
+    <html lang={locale} dir={direction} data-scroll-behavior="smooth">
       <body className={`${tajawal.className} antialiased`}>
         <NextIntlClientProvider messages={messages}>
           <AppContext>{children}</AppContext>

@@ -40,6 +40,7 @@ const OurServices = () => {
             <ServiceCard
               key={insurance.id}
               title={insurance.name}
+              link={insurance.link}
               text={insurance.description}
               Image={
                 <Image

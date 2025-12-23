@@ -1,15 +1,16 @@
 import { useTranslations } from "next-intl";
-import { Card, CardContent } from "@/components/ui/card";
+import { CardContent } from "@/components/ui/card";
 import GradientText from "./gradient-text";
 import Link from "next/link";
 
 interface ServiceCardProps {
   title: string;
   text: string;
+  link: string;
   Image: React.ReactNode;
 }
 
-const ServiceCard = ({ title, text, Image }: ServiceCardProps) => {
+const ServiceCard = ({ title, text, link, Image }: ServiceCardProps) => {
   const t = useTranslations("home");
 
   return (

@@ -9,7 +9,7 @@ interface ModalProps {
 
 const Modal = ({ children, footer, close }: ModalProps) => {
   // Disable the Scrolling when modal opened
-  useEffect(() => {
+  useEffect((): (() => void) => {
     document.body.style.overflow = "hidden";
 
     return () => (document.body.style.overflow = "unset");

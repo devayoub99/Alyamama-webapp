@@ -64,12 +64,14 @@ const insuranceTypesList = [
     name: "health_insurance",
     description: "health_insurance_desc",
     imageSrc: "health-insurance.jpg",
+    link: "/0",
   },
   {
     id: 2,
     name: "fire_insurance",
     description: "fire_insurance_desc",
     imageSrc: "fire-insurance.jpg",
+    link: "/1",
   },
 
   {
@@ -77,12 +79,14 @@ const insuranceTypesList = [
     name: "car_insurance",
     description: "car_insurance_desc",
     imageSrc: "cars-insurance.jpg",
+    link: "/2",
   },
   {
     id: 4,
     name: "engineering_insurance",
     description: "engineering_insurance_desc",
     imageSrc: "engineering-insurance.jpg",
+    link: "/3",
   },
 ];
 

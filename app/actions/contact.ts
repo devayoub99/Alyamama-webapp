@@ -1,7 +1,7 @@
 "use server";
 import nodemailer from "nodemailer";
 
-export async function submitContactForm(state, formData: FormData) {
+export async function submitContactForm(state: any, formData: FormData) {
   const fullName = formData.get("fullName") as string;
   const email = formData.get("email") as string;
   const message = formData.get("message") as string;
@@ -19,11 +19,9 @@ export async function submitContactForm(state, formData: FormData) {
 
   const port = parseInt(process.env.SMTP_PORT || "587");
 
-  console.log();
-
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
-    port: process.env.SMTP_PORT,
+    port: port,
     secure: port === 465, // true for 465, false for other ports
     auth: {
       user: process.env.SMTP_USER,

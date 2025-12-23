@@ -9,7 +9,6 @@ import facebookIcon from "@/public/icons/facebook.svg";
 import instagramIcon from "@/public/icons/instagram.svg";
 import whatsappIcon from "@/public/icons/whatsapp.svg";
 import tiktokIcon from "@/public/icons/tiktok.svg";
-import Link from "next/link";
 
 const Footer = () => {
   const t = useTranslations("home");
