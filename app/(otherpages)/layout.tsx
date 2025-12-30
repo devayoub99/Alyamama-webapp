@@ -8,9 +8,7 @@ export default async function OtherPagesLayout({
 }) {
   return (
     <>
-      {/* <section className="flex flex-col min-h-dvh"> */}
       <Header />
-      {/* </section> */}
       {children}
     </>
   );
