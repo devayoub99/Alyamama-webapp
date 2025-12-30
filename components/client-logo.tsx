@@ -24,17 +24,24 @@ const ClientLogo = ({ ...client }) => {
       </button>
       {clientModal && (
         <Modal close={handleToggleModal}>
-          <div className="flex items-center justify-between">
-            <div>
+          <div className="flex justify-between">
+            <div className="z-1">
               <h3 className="text-xl font-semibold">{t(client.name)}</h3>
-              <p>{t(client.description)}</p>
+              {/* <p>{t(client.description)}</p> */}
+              {client.description?.map(
+                (part, index): { part: string; index: number } => (
+                  <p key={index} className="py-2 leading-8">
+                    {t(part)}
+                  </p>
+                )
+              )}
             </div>
             <Image
               src={client.imageSrc}
               alt={client.name}
-              className="transition-all rounded-full cursor-pointer hover:scale-110"
-              width={110}
-              height={110}
+              className="fixed right-0 z-0 transition-all rounded-full cursor-pointer opacity-10 hover:scale-110"
+              width={160}
+              height={160}
             />
           </div>
         </Modal>
