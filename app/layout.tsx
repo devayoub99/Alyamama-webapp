@@ -5,6 +5,9 @@ import { routing } from "@/i18n/routing";
 import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { Tajawal } from "next/font/google";
+import Image from "next/image";
+
+import PhoneIcon from "@/public/icons/phone.svg";
 
 const tajawal = Tajawal({
   // variable: tajawal,
@@ -67,7 +70,21 @@ export default async function RootLayout({ children, params }: Props) {
     <html lang={locale} dir={direction} data-scroll-behavior="smooth">
       <body className={`${tajawal.className} antialiased`}>
         <NextIntlClientProvider messages={messages}>
-          <AppContext>{children}</AppContext>
+          <AppContext>
+            <a
+              href="tel: +964 783 4855 602"
+              className="fixed z-10 flex items-center w-10 gap-2 p-2 overflow-hidden text-white transition-all duration-300 cursor-pointer hover:w-auto hover:px-4 bg-color1 rounded-xl bottom-8 left-8"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image src={PhoneIcon} alt="New" className="w-6 h-6 shrink-0" />
+              <span className="transition-opacity duration-300 opacity-0 whitespace-nowrap hover:opacity-100">
+                إتصل بنا
+              </span>
+            </a>
+
+            {children}
+          </AppContext>
         </NextIntlClientProvider>
       </body>
     </html>
