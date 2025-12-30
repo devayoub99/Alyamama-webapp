@@ -19,7 +19,7 @@ const ServiceCard = ({ title, text, link, Image }: ServiceCardProps) => {
       className="flex flex-col gap-6 border shadow-sm bg-card text-card-foreground rounded-xl"
     >
       <CardContent className="flex flex-col items-center justify-between gap-6 px-0 md:flex-row">
-        <div className="flex-1 py-4 text-center ps-6 md:text-start md:py-0">
+        <div className="flex-1 px-4 py-4 text-center md:text-start md:py-0">
           <GradientText
             Element="h3"
             text={t(title)}
