@@ -68,22 +68,27 @@ const AboutUs = () => {
             </div>
           </div>
         </section>
-        <div className="grid grid-cols-4 gap-8 mx-auto mt-16 sm:grid-cols-5 md:grid-cols-6 place-items-center">
+
+        <div className="flex flex-wrap items-center justify-center gap-4 mt-16">
           <Image
             src={InannaInsurance}
             alt="InannaInsurance"
-            className="rounded-full"
+            className="w-16 rounded-full"
           />
           <Image
             src={IraqiReinsurance}
             alt="IraqiReinsurance"
-            className="rounded-full"
+            className="w-16 rounded-full"
           />
-          <Image src={Prevensure} alt="Prevensure" className="rounded-full" />
+          <Image
+            src={Prevensure}
+            alt="Prevensure"
+            className="w-16 rounded-full"
+          />
 
-          <Image src={NGI} alt="NGI" className="rounded-full" />
-          <Image src={ISO45001} alt="ISO45001" className="rounded-full" />
-          <Image src={ISO9001} alt="ISO9001" className="rounded-full" />
+          <Image src={NGI} alt="NGI" className="w-16 rounded-full" />
+          <Image src={ISO45001} alt="ISO45001" className="w-16 rounded-full" />
+          <Image src={ISO9001} alt="ISO9001" className="w-16 rounded-full" />
         </div>
       </Container>
     </section>
