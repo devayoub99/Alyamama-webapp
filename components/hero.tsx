@@ -53,7 +53,7 @@ const Hero = () => {
               className="absolute left-0 -translate-y-4 opacity-0 animate-scale-up delay-1500"
             />
           </p>
-          <p className="self-end my-10 text-sm italic font-light opacity-0 animate-scale-up delay-2500 ">
+          <p className="self-end my-10 text-sm opacity-0 animate-scale-up delay-2500 ">
             {t("vision_brief")}
           </p>
         </div>
