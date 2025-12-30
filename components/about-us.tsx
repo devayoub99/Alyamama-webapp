@@ -73,22 +73,30 @@ const AboutUs = () => {
           <Image
             src={InannaInsurance}
             alt="InannaInsurance"
-            className="w-16 rounded-full"
+            className="w-16 rounded-full md:w-22"
           />
           <Image
             src={IraqiReinsurance}
             alt="IraqiReinsurance"
-            className="w-16 rounded-full"
+            className="w-16 rounded-full md:w-22"
           />
           <Image
             src={Prevensure}
             alt="Prevensure"
-            className="w-16 rounded-full"
+            className="w-16 rounded-full md:w-22"
           />
 
-          <Image src={NGI} alt="NGI" className="w-16 rounded-full" />
-          <Image src={ISO45001} alt="ISO45001" className="w-16 rounded-full" />
-          <Image src={ISO9001} alt="ISO9001" className="w-16 rounded-full" />
+          <Image src={NGI} alt="NGI" className="w-16 rounded-full md:w-22" />
+          <Image
+            src={ISO45001}
+            alt="ISO45001"
+            className="w-16 rounded-full md:w-22"
+          />
+          <Image
+            src={ISO9001}
+            alt="ISO9001"
+            className="w-16 rounded-full md:w-22"
+          />
         </div>
       </Container>
     </section>
