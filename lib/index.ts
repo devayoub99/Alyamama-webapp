@@ -94,39 +94,31 @@ const featuredClients = [
   {
     id: 1,
     name: "tbi",
-    description: ["tbi_info_1", "tbi_info_2", "tbi_info_3"],
+    description: ["tbi_info_1", "tbi_info_2"],
     imageSrc: "/featured-clients/TBI.jpg",
   },
   {
     id: 2,
     name: "usembassy",
-    description: [
-      "us_embassy_info_1",
-      "us_embassy_info_2",
-      "us_embassy_info_3",
-    ],
+    description: ["us_embassy_info_1"],
     imageSrc: "/featured-clients/Us-embassy.png",
   },
   {
     id: 3,
     name: "moo",
-    description: ["moo_info_1", "moo_info_2"],
+    description: ["moo_info_1"],
     imageSrc: "/featured-clients/MoO.png",
   },
   {
     id: 4,
     name: "sanaAlamar",
-    description: ["sana_alamar_desc"],
+    description: ["sana_alamar_info_1"],
     imageSrc: "/featured-clients/Sana-alamar.jpg",
   },
   {
     id: 5,
     name: "halawany",
-    description: [
-      "halawani_sweets_info_1",
-      "halawani_sweets_info_2",
-      "halawani_sweets_info_3",
-    ],
+    description: ["halawany_sweets_info_1"],
     imageSrc: "/featured-clients/Halawany.jpg",
   },
   {
@@ -144,7 +136,7 @@ const featuredClients = [
   {
     id: 8,
     name: "almaham",
-    description: ["almaham_desc"],
+    description: ["almaham_company_info_1"],
     imageSrc: "/featured-clients/Almaham.jpg",
   },
 ];
