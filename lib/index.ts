@@ -48,6 +48,12 @@ const navigationLinks = [
         title: "car_insurance",
         link: "/services/car_insurance",
       },
+      {
+        id: 9,
+        type: "simple",
+        title: "other_insurance_types",
+        link: "/services",
+      },
     ],
   },
   // {
@@ -73,7 +79,6 @@ const insuranceTypesList = [
     imageSrc: "fire-insurance.jpg",
     link: "/1",
   },
-
   {
     id: 3,
     name: "car_insurance",
@@ -87,6 +92,48 @@ const insuranceTypesList = [
     description: "engineering_insurance_desc",
     imageSrc: "engineering-insurance.jpg",
     link: "/3",
+  },
+  {
+    id: 5,
+    name: "cargo_insurance",
+    description: "cargo_insurance_desc",
+    imageSrc: "cargo-insurance.jpg",
+    link: "/4",
+  },
+  {
+    id: 6,
+    name: "personal_accident_insurance",
+    description: "personal_accident_insurance_desc",
+    imageSrc: "personal-accident-insurance.jpg",
+    link: "/5",
+  },
+  {
+    id: 7,
+    name: "cash_in_transit_insurance",
+    description: "cash_in_transit_insurance_desc",
+    imageSrc: "cash-in-transit-insurance.jpg",
+    link: "/6",
+  },
+  {
+    id: 8,
+    name: "cash_in_safe_insurance",
+    description: "cash_in_safe_insurance_desc",
+    imageSrc: "cash-in-safe-insurance.jpg",
+    link: "/7",
+  },
+  {
+    id: 9,
+    name: "legal_liability_insurance",
+    description: "legal_liability_insurance_desc",
+    imageSrc: "legal-liability-insurance.jpg",
+    link: "/8",
+  },
+  {
+    id: 10,
+    name: "travel_insurance",
+    description: "travel_insurance_desc",
+    imageSrc: "travel-insurance.jpg",
+    link: "/9",
   },
 ];
 

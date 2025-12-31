@@ -8,6 +8,7 @@ import { Tajawal } from "next/font/google";
 import Image from "next/image";
 
 import PhoneIcon from "@/public/icons/phone.svg";
+import Footer from "@/components/footer";
 
 const tajawal = Tajawal({
   // variable: tajawal,
@@ -84,6 +85,7 @@ export default async function RootLayout({ children, params }: Props) {
             </a>
 
             {children}
+            <Footer />
           </AppContext>
         </NextIntlClientProvider>
       </body>
