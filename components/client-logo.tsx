@@ -36,7 +36,7 @@ const ClientLogo = ({ ...client }) => {
             <Image
               src={client.imageSrc}
               alt={client.name}
-              className="rounded-full cursor-pointer opacity-80 w-30 h-30"
+              className="hidden rounded-full cursor-pointer opacity-80 w-30 h-30 md:block"
               width={160}
               height={160}
             />
