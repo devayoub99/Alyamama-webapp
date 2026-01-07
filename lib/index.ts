@@ -97,7 +97,7 @@ const insuranceTypesList = [
     id: 5,
     name: "cargo_insurance",
     description: "cargo_insurance_desc",
-    imageSrc: "cargo-insurance.jpg",
+    imageSrc: "cargo-insurance.png",
     link: "/4",
   },
   {
@@ -111,14 +111,14 @@ const insuranceTypesList = [
     id: 7,
     name: "cash_in_transit_insurance",
     description: "cash_in_transit_insurance_desc",
-    imageSrc: "cash-in-transit-insurance.jpg",
+    imageSrc: "cash-in-transit-insurance.png",
     link: "/6",
   },
   {
     id: 8,
     name: "cash_in_safe_insurance",
     description: "cash_in_safe_insurance_desc",
-    imageSrc: "cash-in-safe-insurance.jpg",
+    imageSrc: "cash-in-safe-insurance.png",
     link: "/7",
   },
   {

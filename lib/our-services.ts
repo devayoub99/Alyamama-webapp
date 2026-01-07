@@ -42,7 +42,7 @@ const ourServices = {
       "cargo_insurance_paragraph2",
       "cargo_insurance_paragraph3",
     ],
-    imageSrc: "cargo-insurance.jpg",
+    imageSrc: "cargo-insurance.png",
   },
   personal_accident_insurance: {
     title: "personal_accident_insurance_title",
@@ -60,7 +60,7 @@ const ourServices = {
       "cash_in_transit_insurance_paragraph2",
       "cash_in_transit_insurance_paragraph3",
     ],
-    imageSrc: "cash-in-transit-insurance.jpg",
+    imageSrc: "cash-in-transit-insurance.png",
   },
   cash_in_safe_insurance: {
     title: "cash_in_safe_insurance_title",
@@ -69,7 +69,7 @@ const ourServices = {
       "cash_in_safe_insurance_paragraph2",
       "cash_in_safe_insurance_paragraph3",
     ],
-    imageSrc: "cash-in-safe-insurance.jpg",
+    imageSrc: "cash-in-safe-insurance.png",
   },
   legal_liability_insurance: {
     title: "legal_liability_insurance_title",
